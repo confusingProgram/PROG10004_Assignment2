@@ -31,3 +31,10 @@ class Pizza():
         if len(array[1]) == 1: # If the decimal part of the number contains only 1 number in the case it is a multiple of 10 (0, 10, 20, etc.), it will create an extra 0.
             total = total + "0"
         return total
+    
+    def __str__(self):
+        """The string method, returns the object information as a string"""
+        string = str(self.number_of_pizzas) + " " + self.size + " pizza"
+        if self.number_of_pizzas > 1: # If number_of_pizzas ordered is greater than 1, the string is changed to include an s for display purposes.
+            string = string + "s"
+        return string
