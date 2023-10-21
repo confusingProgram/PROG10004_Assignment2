@@ -1,6 +1,6 @@
 """This module contains the Application, where the program will interact with the user"""
-import User
-import Pizza
+from User import User
+from Pizza import Pizza
 
 # Placeholder values for information to get from user.
 username = ""
@@ -82,11 +82,11 @@ while True: # Pizza number selection
         number_of_pizzas = int(number_of_pizzas)
         break
 
-#u1 = User.User(username, email, address)
-p1 = Pizza.Pizza(size, number_of_pizzas)
+u1 = User(username, email, address)
+p1 = Pizza(size, number_of_pizzas)
 
 print("You have ordered " + str(p1) + ".")
 print("Your total after the discount is $" + str(p1.total()) + ".")
-print("Order will be delivered to " + username + " at " + address + ".") # current placeholders
-print("Receipt will be emailed to " + email) # current placeholders
+print("Order will be delivered to " + u1.get_name + " at " + u1.get_address + ".")
+print("Receipt will be emailed to " + u1.get_email)
 print("Thank you for your service. Your order will arrive soon!")
