@@ -25,7 +25,7 @@ while True: # User information loop
         print("Your email address is: " + email)
         print("The delivery address is: " + address)
         confirm = input("Is this correct? Yes or No: ")
-        confirm = confirm.upper()
+        confirm = confirm.upper() # Input is switched to all uppercase to account for all cases of spelling.
 
         if confirm == "YES" or confirm == "NO": # Confirmation loop will break if "YES" or "NO"
             break
@@ -39,7 +39,7 @@ while True: # User information loop
 
 while True: # Pizza size selection
     size = input("What size pizza would you like? Small, Medium, Large, or X-Large: ")
-    size = size.upper()
+    size = size.upper() # Input is switched to all uppercase to account for all cases of spelling.
     if size == "SMALL":
         print("Price per Small pizza: $10.")
     elif size == "MEDIUM":
@@ -53,7 +53,7 @@ while True: # Pizza size selection
         continue
     
     while True:
-        size = size.title()
+        size = size.title() # Input is switched to titlecase (1st letter uppercase, every other letter lowercase) for printing and argument purposes
         confirm = input("Are you sure you want " + size + " size? Yes or No: ")
         confirm = confirm.upper()
         if confirm == "YES" or confirm == "NO":
@@ -75,7 +75,7 @@ while True: # Pizza number selection
 
     while True:
         confirm = input("Are you sure you want " + number_of_pizzas + "? Yes or No: ")
-        confirm = confirm.upper()
+        confirm = confirm.upper() # Input is switched to all uppercase to account for all cases of spelling.
         if confirm == "YES" or confirm == "NO":
             break
         else:
@@ -87,11 +87,13 @@ while True: # Pizza number selection
         number_of_pizzas = int(number_of_pizzas)
         break
 
+# User and Pizza objects created.
 u1 = User(username, email, address)
 p1 = Pizza(size, number_of_pizzas)
 
+# Final print statements.
 print(f"You have ordered {p1}.")
 print(f"Your total after the discount is ${p1.total()}.")
-print(f"Order will be delivered to {u1.username} at  + {u1.address}.")
-print(f"Receipt will be emailed to {u1.email}.")
+print(f"Order will be delivered to {u1.get_username()} at {u1.get_address()}.")
+print(f"Receipt will be emailed to {u1.get_email()}.")
 print("Thank you for your service. Your order will arrive soon!")
