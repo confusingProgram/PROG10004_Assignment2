@@ -35,7 +35,7 @@ while True: # User information loop
     if confirm == "Yes": # User info loop will end if confirmation is "Yes"
         print("Welcome " + username + "!")
         break
-    
+
 while True: # Pizza size selection
     size = input("What size pizza would you like? Small, Medium, Large, or X-Large: ")
     if size == "Small":
@@ -61,4 +61,23 @@ while True: # Pizza size selection
     
     if confirm == "Yes":
         print(size + " size selected.")
+        break
+
+while True: # Pizza number selection
+    number_of_pizzas = input("How many pizzas would you like: ")
+    if number_of_pizzas.isdigit() == False or number_of_pizzas == "0": # If number entered is negative, float, or 0
+        print("Please enter a positive non-zero integer.")
+        continue
+
+    while True:
+        confirm = input("Are you sure you want " + number_of_pizzas + "? Yes or No: ")
+        if confirm == "Yes" or confirm == "No":
+            break
+        else:
+            print("Please select Yes or No.")
+    
+    print()
+    
+    if confirm == "Yes":
+        number_of_pizzas = int(number_of_pizzas)
         break
