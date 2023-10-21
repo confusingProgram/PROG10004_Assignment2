@@ -16,3 +16,18 @@ class Pizza():
             self.price = 15
         elif self.size == "X-Large":
             self.price = 18
+
+    def total(self):
+        """The total method, calculates the total dollar amount for the order."""
+        total = self.price * self.number_of_pizzas # Setting total to price * number of pizzas
+        if self.number_of_pizzas >= 3: # If there are 3 or more pizzas, apply a 15% discount, and round
+            total = total *0.85 # Discount
+            total = total * 100 // 1 # Rounding to 2 cent places
+            total = total / 100
+
+        total = float(total) # total is converted to float in case total is something like #10 -> $10.0
+        total = str(total) # total is converted to string in order to create two decimal places in case of something like $10.0 -> $10.00
+        array = total.split(".")
+        if len(array[1]) == 1: # If the decimal part of the number contains only 1 number in the case it is a multiple of 10 (0, 10, 20, etc.), it will create an extra 0.
+            total = total + "0"
+        return total
