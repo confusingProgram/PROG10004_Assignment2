@@ -2,25 +2,28 @@
 
 # User should have name, email, and address
 class User():
-    def __init__(self, user, email, address):
-        self._username = user
+    def __init__(self, username, email, address):
+        self._username = username
         self._email = email
         self._address = address
 
-    def get_name(self):
+    @property
+    def username(self):
         return self._username
-    
-    def set_name(self, new_name):
+    @username.setter
+    def username(self, new_name):
         self._username = new_name
 
-    def get_email(self):
+    @property
+    def email(self):
         return self._email
-    
+    @email.setter
     def set_email(self, new_email):
         self._email = new_email
 
-    def get_address(self):
-        return self._address
-
-    def set_address(self, new_address):
+    @property
+    def address(self):
+        return str(self._address)
+    @address.setter
+    def address(self, new_address):
         self._address = new_address
