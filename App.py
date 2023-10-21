@@ -81,3 +81,12 @@ while True: # Pizza number selection
     if confirm == "Yes":
         number_of_pizzas = int(number_of_pizzas)
         break
+
+#u1 = User.User(username, email, address)
+p1 = Pizza.Pizza(size, number_of_pizzas)
+
+print("You have ordered " + str(p1) + ".")
+print("Your total after the discount is $" + str(p1.total()) + ".")
+print("Order will be delivered to " + username + " at " + address + ".") # current placeholders
+print("Receipt will be emailed to " + email) # current placeholders
+print("Thank you for your service. Your order will arrive soon!")
